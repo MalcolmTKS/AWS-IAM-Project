@@ -1,8 +1,9 @@
 # AWS Security: Idenity and Access Managment
 
-**Overview**: 
+### Overview: 
 
-![image.png](40fd45f7-6325-4edd-8b3f-6fe5d29adb6e.png)
+![image 18](https://github.com/user-attachments/assets/505bf042-71d6-42d4-9c1d-cbba94b236d1)
+
 
 ---
 
@@ -19,65 +20,65 @@
 - Use IAM roles to grant AWS cross-account access with external ID
 - Revoke an IAM role
 - Setting permissions boundary
-- Test and Debug IAM policies using the IAM policy simulator
+- Test and debug IAM policies using the IAM policy simulator
 
 ---
 
 ## Project Flow
 
-1. Created an IAM user from console with admin privileges:
+### 1. Created an IAM user from the console with admin privileges:
 
 ![image.png](image.png)
 
-1. Assigned admin permissons to the IAM user account:
+### 2. Assigned admin permissions to the IAM user account:
 
 ![image.png](image%201.png)
 
-1. Configured the AWS CLI on local host CMD & Created sample users from the CLI:
+### 3. Configured the AWS CLI on local host CMD & Created sample users from the CLI:
 
 ![image.png](image%202.png)
 
-1. Created IAM group  and added users :
+### 4. Created IAM group  and added users :
 
 ![image.png](image%203.png)
 
-~ Granted read/write access to a S3 bucket: 
+~ Granted read/write access to an S3 bucket: 
 
 ![image.png](image%204.png)
 
-*Note: Users in an IAM group inherits permissons of the group by default.*
+*Note: Users in an IAM group inherit the group's permissions by default.*
 
-1. Implemented IAM policies(Customer Managed Policy)
+### 5. Implemented IAM policies(Customer Managed Policy)
 
 ~  **Scope**: All AWS resources x **Actions**: Reader rights for IAM components **Group**: CloudSecurityTeam
 
 ![image.png](image%205.png)
 
-1. Created and uploaded to an S3 bucket 
+### 6. Created and uploaded to an S3 bucket 
 
 ~ Note: S3 stores data as objects within buckets. An *object* is a file and any metadata that describes the file. A *bucket* is a container for objects.
 
 ![image.png](image%206.png)
 
-1. Created an IAM role for an AWS service [EC2 → S3 ]
+### 7. Created an IAM role for an AWS service [EC2 → S3 ]
 
 ![image.png](image%207.png)
 
-1. Used IAM roles to grant AWS cross-account access 
+### 8. Used IAM roles to grant AWS cross-account access 
 
-~ Created an IAM role for the Audit team with read only permissons. Confirmed read only acces by attempting to upload to the S3 bucket & creating an EC2 instance. 
+I created an IAM role for the Audit team with read-only permissions. I confirmed read-only access by attempting to upload to the S3 bucket and creating an EC2 instance. 
 
 ![image.png](image%208.png)
 
 ![image.png](image%209.png)
 
-1. Used IAM roles to grant AWS cross-acount access with external ID
+### 9. Used IAM roles to grant AWS cross-account access with external ID
 
-~ **Note:** Use the SET command to set the security credntials(access key, secret key, and session token) for WIN users and EXPORT for Mac users.
+~ **Note:** Use the SET command to set the security credentials (access key, secret key, and session token) for WIN users and EXPORT for Mac users.
 
 ![image.png](image%2010.png)
 
-1. Revoked an IAM role 
+### 10. Revoked an IAM role 
 
 ~ Enforced revoke action on active sessions. 
 
@@ -87,17 +88,17 @@
 
 ![image.png](image%2012.png)
 
-1. Set permissions boundary 
+### 11. Set permissions boundary 
 
-~ Assigned policy for an IAM user account to prevent the user from modifying permissons. 
+~ Assigned policy for an IAM user account to prevent the user from modifying permissions. 
 
 ![image.png](image%2013.png)
 
-~ Output from IAM user acct with permisson bounday policy assinged
+~ Output from IAM user acct with permission boundary policy assigned
 
 ![image.png](image%2014.png)
 
-1. Tested and Debug IAM policies using the IAM policy simulator
+### 12. Tested and debugged IAM policies using the IAM policy simulator
 
 ![image.png](image%2015.png)
 
